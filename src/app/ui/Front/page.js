@@ -7,15 +7,14 @@ import Link from '@mui/material/Link';
 import Box from '@mui/material/Box';
 
 const post = {
-    title: 'Title of a longer featured blog post',
-    description:
-      "Multiple lines of text that form the lede, informing new readers quickly and efficiently about what's most interesting in this post's contents.",
-    image: 'https://source.unsplash.com/random?wallpapers',
+    title: 'Timee is you, do it!',
+    description:"Shuuptime is you, Time to create, believe it, anything is possible.",
+    image: 'https://png.pngtree.com/thumb_back/fw800/background/20231225/pngtree-computer-glitch-texture-as-a-background-image_13896775.png',
     imageText: 'main image description',
     linkText: 'Continue reading…',
   };
 
-function MainFeaturedPost(props) {
+function MainFeaturedPost() {
   /* const { post } = props; */
 
   return (
@@ -58,9 +57,9 @@ function MainFeaturedPost(props) {
             <Typography variant="h5" color="inherit" paragraph>
               {post.description}
             </Typography>
-            <Link variant="subtitle1" href="#">
+            {/* <Link variant="subtitle1" href="#">
               {post.linkText}
-            </Link>
+            </Link> */}
           </Box>
         </Grid>
       </Grid>
@@ -68,7 +67,7 @@ function MainFeaturedPost(props) {
   );
 }
 
-MainFeaturedPost.propTypes = {
+/* MainFeaturedPost.propTypes = {
   post: PropTypes.shape({
     description: PropTypes.string.isRequired,
     image: PropTypes.string.isRequired,
@@ -76,6 +75,6 @@ MainFeaturedPost.propTypes = {
     linkText: PropTypes.string.isRequired,
     title: PropTypes.string.isRequired,
   }).isRequired,
-};
+}; */
 
 export default MainFeaturedPost;

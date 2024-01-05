@@ -7,9 +7,10 @@ import Button from '@mui/material/Button';
 import Card from '@mui/material/Card';
 import CardActions from '@mui/material/CardActions';
 import CardContent from '@mui/material/CardContent';
+import CardMedia from '@mui/material/CardMedia';
 import CardHeader from '@mui/material/CardHeader';
-import CssBaseline from '@mui/material/CssBaseline';
 import Grid from '@mui/material/Grid';
+import CssBaseline from '@mui/material/CssBaseline';
 import StarIcon from '@mui/icons-material/StarBorder';
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
@@ -17,7 +18,8 @@ import Link from '@mui/material/Link';
 import GlobalStyles from '@mui/material/GlobalStyles';
 import Container from '@mui/material/Container';
 
-import Front from './ui/Front/page'
+import Front from './ui/Front/page';
+import Colors from './ui/Colors/page'
 
 function Copyright(props) {
   return (
@@ -115,7 +117,7 @@ export default function Pricing() {
       >
         <Toolbar sx={{ flexWrap: 'wrap' }}>
           <Typography variant="h6" color="inherit" noWrap sx={{ flexGrow: 1 }}>
-            Company name
+            Logo
           </Typography>
           <nav>
             <Link
@@ -124,7 +126,7 @@ export default function Pricing() {
               href="#"
               sx={{ my: 1, mx: 1.5 }}
             >
-              Features
+              Tecnology
             </Link>
             <Link
               variant="button"
@@ -151,7 +153,7 @@ export default function Pricing() {
       {/* Hero unit */}
       <Front />
       <Container disableGutters maxWidth="sm" component="main" sx={{ pt: 8, pb: 6 }}>
-        
+
         <Typography
           component="h1"
           variant="h2"
@@ -159,16 +161,51 @@ export default function Pricing() {
           color="text.primary"
           gutterBottom
         >
-          Pricing
+          Page models
         </Typography>
         <Typography variant="h5" align="center" color="text.secondary" component="p">
-          Quickly build an effective pricing table for your potential customers with
-          this layout. It&apos;s built with default MUI components with little
+          Dare to create personal interfaces. Adapt your best idea with the latest technologies.. It&apos;s built with default MUI components with little
           customization.
         </Typography>
       </Container>
-      {/* End hero unit */}
-      <Container maxWidth="md" component="main">
+
+      <Container sx={{ py: 8 }} maxWidth="md">
+        {/* End hero unit */}
+        <Grid container spacing={4}>
+          {cards.map((card) => (
+            <Grid item key={card} xs={12} sm={6} md={4}>
+              <Card
+                sx={{ height: '100%', display: 'flex', flexDirection: 'column' }}
+              >
+                <CardMedia
+                  component="div"
+                  sx={{
+                    // 16:9
+                    pt: '56.25%',
+                  }}
+                  image="https://source.unsplash.com/random?wallpapers"
+                />
+                <CardContent sx={{ flexGrow: 1 }}>
+                  <Typography gutterBottom variant="h5" component="h2">
+                    Heading
+                  </Typography>
+                  <Typography>
+                    This is a media card. You can use this section to describe the
+                    content.
+                  </Typography>
+                </CardContent>
+                <CardActions>
+                  <Button size="small">View Demo</Button>
+                  <Button size="small">Pay</Button>
+                </CardActions>
+              </Card>
+            </Grid>
+          ))}
+        </Grid>
+      </Container>
+      <Colors />
+
+      <Container maxWidth="md" component="main" style={{ marginTop: "30px" }}>
         <Grid container spacing={5} alignItems="flex-end">
           {tiers.map((tier) => (
             // Enterprise card is full width at sm breakpoint
@@ -234,8 +271,7 @@ export default function Pricing() {
           ))}
         </Grid>
       </Container>
-
-
+      <Colors />
 
       {/* Footer */}
       <Container
