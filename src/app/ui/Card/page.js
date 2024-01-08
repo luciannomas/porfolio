@@ -8,6 +8,9 @@ import Typography from '@mui/material/Typography';
 import CardActions from '@mui/material/CardActions';
 import Button from '@mui/material/Button';
 
+import { useRouter } from "next/navigation";
+
+
 const cards = [1, 2, 3, 4, 5, 6];
 const aux = [{ id: 1, image: "", description: "", title: "", demo: "" },
 { id: 2, image: "", description: "", title: "", demo: "" },
@@ -15,10 +18,12 @@ const aux = [{ id: 1, image: "", description: "", title: "", demo: "" },
 { id: 4, image: "", description: "", title: "", demo: "" },
 { id: 5, image: "", description: "", title: "", demo: "" },
 { id: 6, image: "", description: "", title: "", demo: "" },
-{ id: 7 , image: "", description:"", title:"" , demo:"" },
-{ id: 8 , image: "", description:"", title:"" , demo:"" }];
+{ id: 7, image: "", description: "", title: "", demo: "" },
+{ id: 8, image: "", description: "", title: "", demo: "" }];
 
 export default function MediaCard() {
+
+    const router = useRouter();
     return (
         <Container sx={{ py: 8 }} maxWidth="md">
             {/* End hero unit */}
