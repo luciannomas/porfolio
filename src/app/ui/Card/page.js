@@ -1,4 +1,4 @@
-import React from 'react'
+'use client'
 import Container from '@mui/material/Container';
 import Grid from '@mui/material/Grid';
 import Card from '@mui/material/Card';
