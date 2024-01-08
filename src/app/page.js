@@ -39,21 +39,21 @@ function Copyright(props) {
 
 const tiers = [
   {
-    title: 'Free',
-    price: '0',
+    title: 'Static desing',
+    price: '50',
     description: [
       '10 users included',
       '2 GB of storage',
       'Help center access',
       'Email support',
     ],
-    buttonText: 'Sign up for free',
+    buttonText: 'Get started',
     buttonVariant: 'outlined',
   },
   {
-    title: 'Pro',
+    title: 'Pro desing ',
     subheader: 'Most popular',
-    price: '15',
+    price: '100',
     description: [
       '20 users included',
       '10 GB of storage',
@@ -61,18 +61,18 @@ const tiers = [
       'Priority email support',
     ],
     buttonText: 'Get started',
-    buttonVariant: 'contained',
+    buttonVariant: 'outlined', //contained
   },
   {
     title: 'Enterprise',
-    price: '30',
+    price: '500',
     description: [
       '50 users included',
       '30 GB of storage',
       'Help center access',
       'Phone & email support',
     ],
-    buttonText: 'Contact us',
+    buttonText: 'Get started',
     buttonVariant: 'outlined',
   },
 ];
@@ -221,7 +221,7 @@ export default function Pricing() {
                       ${tier.price}
                     </Typography>
                     <Typography variant="h6" color="text.secondary">
-                      /mo
+                      /Usd
                     </Typography>
                   </Box>
                   <ul>
