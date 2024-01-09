@@ -23,7 +23,6 @@ import Front from './ui/Front/page';
 import Colors from './ui/Colors/page';
 import MediaCard from './ui/Card/page';
 import Footer from './ui/Footer/page';
-import One from './ui/Footer/one/page'
 
 import AccessTimeFilledIcon from '@mui/icons-material/AccessTimeFilled';
 import { useRouter } from "next/navigation";

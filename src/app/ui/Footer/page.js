@@ -1,4 +1,3 @@
-'use client'
 import { Container, Grid, Link, Typography } from '@mui/material'
 import WhatsAppIcon from '@mui/icons-material/WhatsApp';
 import InstagramIcon from '@mui/icons-material/Instagram';
