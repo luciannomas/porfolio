@@ -18,24 +18,15 @@ import Link from '@mui/material/Link';
 import GlobalStyles from '@mui/material/GlobalStyles';
 import Container from '@mui/material/Container';
 
+//components
 import Front from './ui/Front/page';
 import Colors from './ui/Colors/page';
-import MediaCard from './ui/Card/page'
+import MediaCard from './ui/Card/page';
+import Footer from './ui/Footer/page';
+import One from './ui/Footer/one/page'
+
 import AccessTimeFilledIcon from '@mui/icons-material/AccessTimeFilled';
 import { useRouter } from "next/navigation";
-
-function Copyright(props) {
-  return (
-    <Typography variant="body2" color="text.secondary" align="center" {...props}>
-      {'Copyright © '}
-      <Link color="inherit" href="https://mui.com/">
-        Your Website
-      </Link>{' '}
-      {new Date().getFullYear()}
-      {'.'}
-    </Typography>
-  );
-}
 
 const tiers = [
   {
@@ -76,33 +67,6 @@ const tiers = [
     buttonVariant: 'outlined',
   },
 ];
-
-const footers = [
-  {
-    title: 'Company',
-    description: ['Team', 'History', 'Contact us', 'Locations'],
-  },
-  {
-    title: 'Features',
-    description: [
-      'Cool stuff',
-      'Random feature',
-      'Team feature',
-      'Developer stuff',
-      'Another one',
-    ],
-  },
-  {
-    title: 'Resources',
-    description: ['Resource', 'Resource name', 'Another resource', 'Final resource'],
-  },
-  {
-    title: 'Legal',
-    description: ['Privacy policy', 'Terms of use'],
-  },
-];
-
-const cards = [1, 2, 3, 4, 5, 6];
 
 // TODO remove, this demo shouldn't need to reset the theme.
 const defaultTheme = createTheme();
@@ -156,7 +120,7 @@ export default function Pricing() {
           </Button> */}
         </Toolbar>
       </AppBar>
-      {/* Hero unit */}
+    
       <Front />
       <Container disableGutters maxWidth="sm" component="main" sx={{ pt: 8, pb: 6 }}>
 
@@ -174,10 +138,8 @@ export default function Pricing() {
           customization.
         </Typography>
       </Container>
-
-      
+ 
       <MediaCard/>
-
       
       <Colors />
 
@@ -247,39 +209,10 @@ export default function Pricing() {
           ))}
         </Grid>
       </Container>
+
       <Colors />
 
-      {/* Footer */}
-      <Container
-        maxWidth="md"
-        component="footer"
-        sx={{
-          borderTop: (theme) => `1px solid ${theme.palette.divider}`,
-          mt: 8,
-          py: [3, 6],
-        }}
-      >
-        <Grid container spacing={4} justifyContent="space-evenly">
-          {footers.map((footer) => (
-            <Grid item xs={6} sm={3} key={footer.title}>
-              <Typography variant="h6" color="text.primary" gutterBottom>
-                {footer.title}
-              </Typography>
-              <ul>
-                {footer.description.map((item) => (
-                  <li key={item}>
-                    <Link href="#" variant="subtitle1" color="text.secondary">
-                      {item}
-                    </Link>
-                  </li>
-                ))}
-              </ul>
-            </Grid>
-          ))}
-        </Grid>
-        <Copyright sx={{ mt: 5 }} />
-      </Container>
-      {/* End footer */}
+      <Footer />
     </ThemeProvider>
   );
 }
