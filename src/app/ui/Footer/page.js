@@ -64,34 +64,34 @@ export default function page() {
                                 item === 'Instagram' ?
                                     <li key={item} style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginRight: '89px' }}>
                                         <InstagramIcon />
-                                        <Link href={insta} variant="subtitle1" color="text.secondary">
+                                        <Link href={insta} style ={{ marginLeft: "5px"}} variant="subtitle1" color="text.secondary">
                                             {item}
                                         </Link>
                                     </li>
                                     : (item === 'Whatsapp') ?
                                         <li key={item} style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginRight: '89px' }}>
                                             <WhatsAppIcon />
-                                            <Link href={num} variant="subtitle1" color="text.secondary">
+                                            <Link href={num} style ={{ marginLeft: "5px"}} variant="subtitle1" color="text.secondary">
                                                 {item}
                                             </Link>
                                         </li>
                                         : (item === 'Telegram') ?
                                             <li key={item} style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginRight: '95px' }}>
                                                 <TelegramIcon />
-                                                <Link href="#" variant="subtitle1" color="text.secondary">
+                                                <Link href="#" style ={{ marginLeft: "5px"}}  variant="subtitle1" color="text.secondary">
                                                     {item}
                                                 </Link>
                                             </li>
                                             : (item === 'Email') ?
                                                 <li key={item} style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginRight: '121px' }}>
                                                     <EmailIcon />
-                                                    <Link href="#" variant="subtitle1" color="text.secondary">
+                                                    <Link href="#" style ={{ marginLeft: "5px"}}  variant="subtitle1" color="text.secondary">
                                                         {item}
                                                     </Link>
                                                 </li>
                                                 :
                                                 <li key={item}>
-                                                    <Link href="#" variant="subtitle1" color="text.secondary">
+                                                    <Link href="#" style ={{ marginLeft: "5px"}}  variant="subtitle1" color="text.secondary">
                                                         {item}
                                                     </Link>
                                                 </li>
