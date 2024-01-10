@@ -1,3 +1,4 @@
+'use client'
 import { AppBar, Toolbar, Typography, Link } from '@mui/material';
 
 //icon

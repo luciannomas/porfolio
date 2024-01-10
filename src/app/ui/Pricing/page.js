@@ -1,4 +1,4 @@
-import React from 'react'
+'use client'
 import { Box, Button, Card, CardActions, CardContent, CardHeader, Container, Grid, Typography } from '@mui/material';
 import  StarIcon  from '@mui/icons-material/StarBorder';
 
