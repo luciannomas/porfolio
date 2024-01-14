@@ -7,14 +7,14 @@ import Title from './ui/Title/page';
 import Pricing from './ui/Pricing/page';
 
 export default function Home() {
-  
+
   return (
     <Layout>
-        <Front />
-        <Title />
-        <MediaCard/>
-        <Colors />
-        <Pricing />
+      <Front />
+      <Title />
+      <MediaCard />
+      <Colors />
+     {/*  <Pricing /> */}
     </Layout>
   );
 }
