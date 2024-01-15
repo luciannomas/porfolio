@@ -31,7 +31,7 @@ export default function CompanyCard({ company }) {
                     gutterBottom
                     variant="h5"
                 >
-                    {company.title}
+                    Squarespace
                 </Typography>
                 <Typography
                     align="center"
