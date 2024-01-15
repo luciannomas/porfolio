@@ -36,7 +36,7 @@ export default function Navbar() {
                     <Link
                         /* variant="button"
                         color="text.primary" */
-                        href="/contact"
+                        href="/enterprise"
                         /* sx={{ my: 1, mx: 1.5 }} */
                         style={{ color: 'black', fontFamily: 'sans-serif', fontSize: '0.875rem' }}
                     >
