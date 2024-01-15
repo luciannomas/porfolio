@@ -2,6 +2,7 @@ import { Avatar, Box, Card, CardContent, Divider, Stack, SvgIcon, Typography } f
 import TelegramIcon from '@mui/icons-material/Telegram';
 
 export default function CompanyCard({ company }) {
+    console.log(company)
     return (
         <Card
             sx={{
@@ -21,7 +22,7 @@ export default function CompanyCard({ company }) {
                     }}
                 >
                     <Avatar
-                        src={company.logo}
+                        src='/assets/logos/logo-squarespace.png'
                         variant="square"
                     />
                 </Box>
