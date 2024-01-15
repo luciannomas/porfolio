@@ -23,7 +23,7 @@ export default function CompanyCard({ company }) {
                     }}
                 >
                     <Avatar
-                        src={company.logo}
+                        src="/assets/logos/logo-lyft.png"
                         variant="square"
                     />
                 </Box>
