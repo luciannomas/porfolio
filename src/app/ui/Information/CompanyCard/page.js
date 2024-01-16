@@ -1,8 +1,10 @@
+'use client'
+
 import { Avatar, Box, Card, CardContent, Divider, Stack, SvgIcon, Typography } from '@mui/material';
 import TelegramIcon from '@mui/icons-material/Telegram';
 
-
 export default function CompanyCard({ company }) {
+    console.log(company)
 
     return (
         <Card
