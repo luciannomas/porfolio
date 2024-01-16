@@ -11,7 +11,8 @@ export default function CompanyCard({company}) {
                 display: 'flex',
                 flexDirection: 'column',
                 height: '100%',
-                background: '#f1f1f1'
+                background: '#f1f1f1',
+               /*  width: '297px', */
 
             }}
         >

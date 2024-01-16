@@ -90,9 +90,11 @@ export default function ok() {
         </Container>
       </Box>
 
+      <Container sx={{ width: '80%' }}>
       <Grid
         container
         spacing={3}
+        
       >
         {companies.map((company) => (
           <Grid
@@ -100,11 +102,13 @@ export default function ok() {
             md={6}
             lg={4}
             key={company.id}
+           // sx={{ background: "red"}}
           >
             <CompanyCard company={company} />
           </Grid>
         ))}
       </Grid>
+      </Container>
       {/* <Stack
         sx={{ pt: 4 }}
         direction="row"
