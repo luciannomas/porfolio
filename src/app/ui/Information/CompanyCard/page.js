@@ -4,9 +4,7 @@ import { Avatar, Box, Card, CardContent, Divider, Stack, SvgIcon, Typography } f
 import TelegramIcon from '@mui/icons-material/Telegram';
 
 export default function CompanyCard({company}) {
-    const {downloads} = company ;
-    console.log(downloads)
-
+    
     return (
         <Card
             sx={{
@@ -88,7 +86,7 @@ export default function CompanyCard({company}) {
                         display="inline"
                         variant="body2"
                     >
-                        {downloads} Downloads
+                        {company?.downloads} Downloads
                     </Typography>
                 </Stack>
             </Stack>
