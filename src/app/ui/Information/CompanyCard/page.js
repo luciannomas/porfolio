@@ -3,8 +3,9 @@
 import { Avatar, Box, Card, CardContent, Divider, Stack, SvgIcon, Typography } from '@mui/material';
 import TelegramIcon from '@mui/icons-material/Telegram';
 
-export default function CompanyCard({ company }) {
-    console.log(company)
+export default function CompanyCard({company}) {
+    const {downloads} = company ;
+    console.log(downloads)
 
     return (
         <Card
@@ -40,7 +41,7 @@ export default function CompanyCard({ company }) {
                     align="center"
                     variant="body1"
                 >
-                    {company.description}
+                    {company?.description}
                 </Typography>
             </CardContent>
             <Box sx={{ flexGrow: 1 }} />
@@ -87,7 +88,7 @@ export default function CompanyCard({ company }) {
                         display="inline"
                         variant="body2"
                     >
-                        {company.downloads} Downloads
+                        {downloads} Downloads
                     </Typography>
                 </Stack>
             </Stack>
