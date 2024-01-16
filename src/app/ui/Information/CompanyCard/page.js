@@ -34,7 +34,7 @@ export default function CompanyCard({ company }) {
                     gutterBottom
                     variant="h5"
                 >
-                     {company.title}
+                     {company?.title}
                 </Typography>
                 <Typography
                     align="center"
