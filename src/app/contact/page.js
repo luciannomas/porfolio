@@ -48,7 +48,7 @@ export default function Contact() {
                                 height="140"
                                 image="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQtaWIs_3hUqbQfio5L8l08s9OY8kG61wb8ig&usqp=CAU" // Cambia esto por la ruta de tu imagen
                             />
-                            <Typography variant="h4" gutterBottom style = {{ marginTop: "12px"}}>
+                            <Typography variant="h4" gutterBottom style={{ marginTop: "12px" }}>
                                 ShuppTimee
                             </Typography>
                             <Typography variant="body1">
@@ -72,7 +72,16 @@ export default function Contact() {
                                 <TextField label="Message" multiline rows={4} variant="outlined" margin="normal" fullWidth />
 
                                 {/* Botón de envío */}
-                                <Button type="submit" variant="contained" color="primary">
+                                <Button
+                                 onClick={async (e) => {
+                                    e.preventDefault();
+                                    const res = await fetch("https://shupptime.vercel.app/api/send", {
+                                      method: "POST",
+                                    });
+                                    const data = await res.json();
+                                    console.log(data)
+                                  }}
+                                    type="submit" variant="contained" color="primary">
                                     Send
                                 </Button>
                             </form>
