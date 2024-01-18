@@ -75,7 +75,7 @@ export default function Contact() {
                                 <Button
                                  onClick={async (e) => {
                                     e.preventDefault();
-                                    const res = await fetch("/api/send", {
+                                    const res = await fetch("https://shupptime.vercel.app/api/send", {
                                       method: "POST",
                                     });
                                     const data = await res.json();
