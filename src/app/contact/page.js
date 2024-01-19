@@ -60,14 +60,13 @@ export default function Contact() {
         const formData = new FormData(event.currentTarget);
 
         try {
-            const res = await fetch("https://shupptime.vercel.app/api/send", {
+            const res = await fetch("/api/send", { // https://shupptime.vercel.app/
                 method: "POST",
                 body: formData,
             });
             const data = await res.json();
             handleOpen();
-            router.push("/");
-            router.refresh();
+            
             console.log(data);
 
         } catch (error) {
@@ -75,6 +74,10 @@ export default function Contact() {
         }
 
     };
+    const exit = ()=> {
+        handleClose()
+        return  router.push("/");
+    }
 
     return (
         <Layout>
@@ -142,7 +145,7 @@ export default function Contact() {
                             {/* <Typography id="keep-mounted-modal-description" sx={{ mt: 2 }}>
                             Duis mollis, est non commodo luctus, nisi erat porttitor ligula.
                         </Typography> */}
-                            <Button style={{ marginLeft: '25px', }} variant="contained" color="primary" onClick={() => handleClose()}>
+                            <Button onClick = {exit} style={{ marginLeft: '25px', }} variant="contained" color="primary">
                                 exit
                             </Button>
                         </div>
