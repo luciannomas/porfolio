@@ -31,7 +31,7 @@ const handleSubmit = async (event) => {
 
     const formData = new FormData(event.currentTarget);
     
-    const res = await fetch("/api/send", {
+    const res = await fetch("https://shupptime.vercel.app/api/send", {
         method: "POST",
         body: formData,
     });
