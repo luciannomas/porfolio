@@ -50,13 +50,6 @@ export default function Contact() {
 
     const handleSubmit = async (event) => {
         event.preventDefault();
-
-        /* const data = new FormData(event.currentTarget);
-        console.log({
-          email: data.get('email'),
-          password: data.get('password'),
-        }); */
-
         const formData = new FormData(event.currentTarget);
 
         try {
@@ -118,9 +111,9 @@ export default function Contact() {
                                 <Typography variant="h5" gutterBottom align="center">
                                     Contact us!
                                 </Typography>
-                                <TextField name="name" label="Name" variant="outlined" margin="normal" fullWidth />
-                                <TextField name="email" label="Email" type="email" variant="outlined" margin="normal" fullWidth />
-                                <TextField name="message" abel="Message" multiline rows={4} variant="outlined" margin="normal" fullWidth />
+                                <TextField name="name" required label="Name" variant="outlined" margin="normal" fullWidth />
+                                <TextField name="email" required label="Email" type="email" variant="outlined" margin="normal" fullWidth />
+                                <TextField name="message" required label="Message" multiline rows={4} variant="outlined" margin="normal" fullWidth />
                                 {/* Botón de envío form */}
                                 <Button
                                     type="submit" variant="contained" color="primary">
@@ -153,8 +146,6 @@ export default function Contact() {
                     </Box>
                 </Modal>
             </Container>
-
-
         </Layout >
     );
 }
