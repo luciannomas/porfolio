@@ -1,5 +1,5 @@
 // import EmailTemplate from "../../ui/Email/page";
-import {EmailTemplate} from '../../ui/Email/aux/EmailTemplate';
+import { EmailTemplate } from '../../ui/Email/aux/EmailTemplate';
 import { NextResponse } from "next/server";
 import { Resend } from "resend";
 
@@ -11,15 +11,20 @@ const resend = new Resend('re_34HYgCBd_HBXTLjnkhqqvftGiRxG9m6yh'); //  process.e
       react: EmailTemplate({ firstName: "lucano" }),
       text: "", 
       html:"<div> ola</div>",*/
-export async function POST() {
+
+export async function POST(request) {
+    const forma = await request.formData();
+    const message = forma.get("message");
+    const name = forma.get("name");
+    const email = forma.get("email");
+
     try {
         const data = await resend.emails.send({
             from: 'onboarding@resend.dev',
             to: 'luciano.mastran@gmail.com',
-            subject: 'ok3!!!',
-            react: EmailTemplate({ firstName: "lucano" }),
-            text:"",
-    
+            subject: 'Contact us now!!!',
+            react: EmailTemplate({ name,  message, email }),
+            text: "",
         });
 
         return NextResponse.json(data);

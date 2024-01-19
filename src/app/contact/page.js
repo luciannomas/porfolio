@@ -26,8 +26,27 @@ const ContactoForm = styled(StyledPaper)({
     alignItems: 'center',
 });
 
-export default function Contact() {
+const handleSubmit = async (event) => {
+    event.preventDefault();
+
+    const formData = new FormData(event.currentTarget);
     
+    const res = await fetch("/api/send", {
+        method: "POST",
+        body: formData,
+    });
+    const data = await res.json();
+
+    console.log(data)
+
+    /*  if (res?.error) setError(res.error);
+ 
+     if (res?.ok) return router.push("/dashboard"); */
+
+};
+
+export default function Contact() {
+
     return (
         <Layout>
             <Container>
@@ -63,24 +82,17 @@ export default function Contact() {
                     <Grid item xs={12} sm={6} style={{ width: '80px' }}>
                         <ContactoForm elevation={3}>
                             {/* Formulario */}
-                            <form>
+                            <form onSubmit={handleSubmit}>
                                 <Typography variant="h5" gutterBottom align="center">
                                     Contact us!
                                 </Typography>
-                                <TextField label="Name" variant="outlined" margin="normal" fullWidth />
-                                <TextField label="Email" type="email" variant="outlined" margin="normal" fullWidth />
-                                <TextField label="Message" multiline rows={4} variant="outlined" margin="normal" fullWidth />
+                                <TextField name="name" label="Name" variant="outlined" margin="normal" fullWidth />
+                                <TextField name="email" label="Email" type="email" variant="outlined" margin="normal" fullWidth />
+                                <TextField name="message" abel="Message" multiline rows={4} variant="outlined" margin="normal" fullWidth />
 
                                 {/* Botón de envío */}
                                 <Button
-                                 onClick={async (e) => {
-                                    e.preventDefault();
-                                    const res = await fetch("https://shupptime.vercel.app/api/send", {
-                                      method: "POST",
-                                    });
-                                    const data = await res.json();
-                                    console.log(data)
-                                  }}
+
                                     type="submit" variant="contained" color="primary">
                                     Send
                                 </Button>
