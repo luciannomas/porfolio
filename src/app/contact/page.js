@@ -1,9 +1,22 @@
 'use client'
-import { Button, Grid, Paper, TextField, Typography, CardMedia, Container } from '@mui/material';
+import { useState } from "react";
+import { Button, Grid, Paper, TextField, Typography, CardMedia, Container, Modal, Box } from '@mui/material';
 import Layout from '../ui/Layout/page';
 import { styled } from '@mui/system';
-
 import LocationOnIcon from '@mui/icons-material/LocationOn';
+import { useRouter } from "next/navigation";
+
+const style = {
+    position: 'absolute',
+    top: '50%',
+    left: '50%',
+    transform: 'translate(-50%, -50%)',
+    width: 400,
+    bgcolor: 'background.paper',
+    border: '2px solid #000',
+    boxShadow: 24,
+    p: 4,
+};
 
 const StyledPaper = styled(Paper)(({ theme }) => ({
     padding: theme.spacing(3),
@@ -26,34 +39,42 @@ const ContactoForm = styled(StyledPaper)({
     alignItems: 'center',
 });
 
-const handleSubmit = async (event) => {
-    event.preventDefault();
 
-
-    /* const data = new FormData(event.currentTarget);
-    console.log({
-      email: data.get('email'),
-      password: data.get('password'),
-    }); */
-
-    const formData = new FormData(event.currentTarget);
-
-    try {
-        const res = await fetch("https://shupptime.vercel.app/api/send", {
-            method: "POST",
-            body: formData,
-        });
-        const data = await res.json();
-
-        console.log(data);
-        
-    } catch (error) {
-        console.log(error)
-    }
-
-};
 
 export default function Contact() {
+
+    const [open, setOpen] = useState(false);
+    const handleOpen = () => setOpen(true);
+    const handleClose = () => setOpen(false);
+    const router = useRouter();
+
+    const handleSubmit = async (event) => {
+        event.preventDefault();
+
+        /* const data = new FormData(event.currentTarget);
+        console.log({
+          email: data.get('email'),
+          password: data.get('password'),
+        }); */
+
+        const formData = new FormData(event.currentTarget);
+
+        try {
+            const res = await fetch("https://shupptime.vercel.app/api/send", {
+                method: "POST",
+                body: formData,
+            });
+            const data = await res.json();
+            handleOpen();
+            router.push("/");
+            router.refresh();
+            console.log(data);
+
+        } catch (error) {
+            console.log(error)
+        }
+
+    };
 
     return (
         <Layout>
@@ -97,19 +118,37 @@ export default function Contact() {
                                 <TextField name="name" label="Name" variant="outlined" margin="normal" fullWidth />
                                 <TextField name="email" label="Email" type="email" variant="outlined" margin="normal" fullWidth />
                                 <TextField name="message" abel="Message" multiline rows={4} variant="outlined" margin="normal" fullWidth />
-
-                                {/* Botón de envío */}
+                                {/* Botón de envío form */}
                                 <Button
-
                                     type="submit" variant="contained" color="primary">
                                     Send
                                 </Button>
                             </form>
                         </ContactoForm>
                     </Grid>
-
-
                 </Grid>
+                <Modal
+                    keepMounted
+                    open={open}
+                    onClose={handleClose}
+                    aria-labelledby="keep-mounted-modal-title"
+                    aria-describedby="keep-mounted-modal-description"
+                >
+                    <Box sx={style}>
+                        <div style={{ display: 'flex', textAlign: 'center' }}>
+                            <Typography id="keep-mounted-modal-title" variant="h6" component="h2">
+                                Email sent successfully !!
+                            </Typography>
+                            {/* <Typography id="keep-mounted-modal-description" sx={{ mt: 2 }}>
+                            Duis mollis, est non commodo luctus, nisi erat porttitor ligula.
+                        </Typography> */}
+                            <Button style={{ marginLeft: '25px', }} variant="contained" color="primary" onClick={() => handleClose()}>
+                                exit
+                            </Button>
+                        </div>
+
+                    </Box>
+                </Modal>
             </Container>
 
 
