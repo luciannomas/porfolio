@@ -29,19 +29,27 @@ const ContactoForm = styled(StyledPaper)({
 const handleSubmit = async (event) => {
     event.preventDefault();
 
+
+    /* const data = new FormData(event.currentTarget);
+    console.log({
+      email: data.get('email'),
+      password: data.get('password'),
+    }); */
+
     const formData = new FormData(event.currentTarget);
-    
-    const res = await fetch("https://shupptime.vercel.app/api/send", {
-        method: "POST",
-        body: formData,
-    });
-    const data = await res.json();
 
-    console.log(data)
+    try {
+        const res = await fetch("https://shupptime.vercel.app/api/send", {
+            method: "POST",
+            body: formData,
+        });
+        const data = await res.json();
 
-    /*  if (res?.error) setError(res.error);
- 
-     if (res?.ok) return router.push("/dashboard"); */
+        console.log(data);
+        
+    } catch (error) {
+        console.log(error)
+    }
 
 };
 
