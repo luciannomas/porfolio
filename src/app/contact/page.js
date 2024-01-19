@@ -27,7 +27,7 @@ const ContactoForm = styled(StyledPaper)({
 });
 
 export default function Contact() {
-
+    
     return (
         <Layout>
             <Container>
@@ -75,7 +75,7 @@ export default function Contact() {
                                 <Button
                                  onClick={async (e) => {
                                     e.preventDefault();
-                                    const res = await fetch("https://shupptime.vercel.app/api/send", {
+                                    const res = await fetch("http://localhost:3000/api/send", {
                                       method: "POST",
                                     });
                                     const data = await res.json();
